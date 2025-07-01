@@ -14,7 +14,7 @@ A comprehensive dental center management dashboard featuring role-based authenti
 
 🌐 **[Live Application](https://entnt-dental-management-system-bhanunama.vercel.app/)**  
 📱 **[Mobile Demo](https://entnt-dental-management-system-bhanunama.vercel.app/)**  
-📁 **[GitHub Repository](https://github.com/yourusername/dental-management-system)**
+📁 **[GitHub Repository](https://github.com/BhanuNama/ENTNT-Dental-Management-System.git)**
 
 ## 📋 **Assignment Compliance Overview**
 
@@ -57,10 +57,10 @@ Password: patient123
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/dental-management-system.git
+git clone https://github.com/BhanuNama/ENTNT-Dental-Management-System.git
 
 # 2. Navigate to project directory
-cd dental-management-system
+cd ENTNT-Dental-Management-System
 
 # 3. Install dependencies
 npm install
@@ -611,14 +611,14 @@ VITE_APP_ENVIRONMENT=production
 ## 📞 **Contact & Submission**
 
 ### **Deliverables**
-- ✅ **Deployed App Link**: [https://your-deployed-link.vercel.app](https://your-deployed-link.vercel.app)
-- ✅ **GitHub Repository**: [https://github.com/yourusername/dental-management-system](https://github.com/yourusername/dental-management-system)
+- ✅ **Deployed App Link**: [https://entnt-dental-management-system-bhanunama.vercel.app/]
+- ✅ **GitHub Repository**: [https://github.com/BhanuNama/ENTNT-Dental-Management-System.git]
 - ✅ **Technical Documentation**: This comprehensive README
-- ✅ **Video Demo**: [Optional walkthrough video]
+
 
 ### **Developer Contact**
-- **Email**: [your.email@domain.com](mailto:your.email@domain.com)
-- **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- **Portfolio**: [your-portfolio.com](https://your-portfolio.com)
+- **Email**: [bhanunama08@gmail.comm](mailto:bhanunama08@gmail.com)
+- **LinkedIn**: [https://www.linkedin.com/in/bhanu-nama-654957281/](https://www.linkedin.com/in/bhanu-nama-654957281/)
+- **Portfolio**: [https://bhanunama.netlify.app/](https://bhanunama.netlify.app/)
 
 
