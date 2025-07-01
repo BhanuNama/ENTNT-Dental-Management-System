@@ -12,8 +12,8 @@ A comprehensive dental center management dashboard featuring role-based authenti
 
 ## 🚀 **Live Demo**
 
-🌐 **[Live Application](https://your-deployed-link.vercel.app)**  
-📱 **[Mobile Demo](https://your-deployed-link.vercel.app)**  
+🌐 **[Live Application](https://entnt-dental-management-system-bhanunama.vercel.app/)**  
+📱 **[Mobile Demo](https://entnt-dental-management-system-bhanunama.vercel.app/)**  
 📁 **[GitHub Repository](https://github.com/yourusername/dental-management-system)**
 
 ## 📋 **Assignment Compliance Overview**
