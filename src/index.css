@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background: #f8fafc;
+  }
+  
+  .dark body {
+    background: #0f172a;
+  }
+  
+  html.dark {
+    color-scheme: dark;
+    --tooltip-bg: #1f2937;
+    --tooltip-border: #374151;
+    --tooltip-text: #f9fafb;
+    --card-glow: rgba(59, 130, 246, 0.15);
+    --card-shine: rgba(255, 255, 255, 0.1);
+    --border-glow: rgba(59, 130, 246, 0.3);
+    --medical-primary: #3b82f6;
+    --medical-secondary: #06b6d4;
+    --medical-accent: #8b5cf6;
+  }
+  
+  html {
+    --tooltip-bg: #ffffff;
+    --tooltip-border: #e5e7eb;
+    --tooltip-text: #111827;
+    --card-glow: rgba(59, 130, 246, 0.08);
+    --card-shine: rgba(255, 255, 255, 0.6);
+    --border-glow: rgba(59, 130, 246, 0.2);
+    --medical-primary: #3b82f6;
+    --medical-secondary: #06b6d4;
+    --medical-accent: #8b5cf6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    color: #1e293b;
+  }
+  
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #f1f5f9;
+  }
+  
+  p {
+    @apply leading-relaxed;
+    color: #64748b;
+  }
+  
+  .dark p {
+    color: #94a3b8;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm hover:shadow-md;
+    border: 1px solid transparent;
+  }
+  
+  /* Clean Medical Card Styles */
+  .card {
+    @apply bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 relative overflow-hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 ease-out cursor-pointer;
+    position: relative;
+  }
+  
+  .card-hover:hover {
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  .card-hover:hover::before {
+    left: 100%;
+  }
+  
+  /* Clean Stats Cards like the dashboard images */
+  .stats-card {
+    @apply bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 transition-all duration-200 ease-out cursor-pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.4s ease;
+    pointer-events: none;
+  }
+  
+  .stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  .stats-card:hover::before {
+    left: 100%;
+  }
+  
+  /* Professional Glass Effects */
+  .glass-effect {
+    @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700;
+    position: relative;
+  }
+  
+  .glass-effect:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  .dark .glass-effect:hover {
+    background: rgba(31, 41, 55, 0.95);
+  }
+  
+  /* Clean Medical Input Styles */
+  .input {
+    @apply w-full px-3 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-200 dark:focus:ring-blue-500/20 transition-all duration-200 font-normal text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 bg-white dark:bg-gray-800;
+    font-size: 14px;
+  }
+  
+  .input:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+  
+  .input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    outline: none;
+  }
+  
+  /* Clean Button Enhancements */
+  .btn-enhanced {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.4s ease;
+    pointer-events: none;
+  }
+  
+  .btn-enhanced:hover::before {
+    left: 100%;
+  }
+  
+  .btn-enhanced:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Professional Grid Items */
+  .grid-item {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-2px);
+    z-index: 10;
+  }
+  
+  /* Trust Badge Elements */
+  .trust-badge {
+    @apply bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-md px-3 py-1.5 text-sm font-medium text-blue-700 dark:text-blue-300;
+  }
+  
+  /* Medical Status Indicators */
+  .status-indicator {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-scheduled {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300;
+  }
+  
+  .status-completed {
+    @apply bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300;
+  }
+  
+  .status-cancelled {
+    @apply bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300;
+  }
+  
+  .status-in-progress {
+    @apply bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300;
+  }
+  
+  /* Clean Navigation */
+  .nav-item {
+    @apply transition-all duration-200 ease-out;
+    position: relative;
+  }
+  
+  .nav-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Patient Avatar */
+  .patient-avatar {
+    @apply w-10 h-10 rounded-full border-2 border-white shadow-sm;
+  }
+  
+  /* Treatment Type Icons */
+  .treatment-icon {
+    @apply w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-medium;
+  }
+  
+  .treatment-icon.implant {
+    @apply bg-blue-500;
+  }
+  
+  .treatment-icon.cleaning {
+    @apply bg-green-500;
+  }
+  
+  .treatment-icon.orthodontics {
+    @apply bg-purple-500;
+  }
+  
+  .treatment-icon.surgery {
+    @apply bg-red-500;
+  }
+  
+  /* Progress Indicators */
+  .progress-step {
+    @apply w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-medium transition-all duration-200;
+  }
+  
+  .progress-step.active {
+    @apply bg-blue-500 border-blue-500 text-white;
+  }
+  
+  .progress-step.completed {
+    @apply bg-green-500 border-green-500 text-white;
+  }
+  
+  .progress-step.pending {
+    @apply bg-gray-100 border-gray-300 text-gray-500;
+  }
+  
+  /* Chart Containers */
+  .chart-container {
+    @apply bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700;
+  }
+  
+  /* Revenue Display */
+  .revenue-display {
+    @apply text-3xl font-bold text-gray-900 dark:text-gray-100;
+  }
+  
+  .revenue-change {
+    @apply text-sm font-medium;
+  }
+  
+  .revenue-change.positive {
+    @apply text-green-600;
+  }
+  
+  .revenue-change.negative {
+    @apply text-red-600;
+  }
+  
+  .bento-grid {
+    @apply grid auto-rows-fr gap-4;
+  }
+  
+  .bento-item {
+    @apply rounded-lg overflow-hidden;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) rgb(241 245 249);
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgb(241 245 249);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgb(203 213 225);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgb(148 163 184);
+  }
+  
+  .dark .scrollbar-thin {
+    scrollbar-color: rgb(75 85 99) rgb(31 41 55);
+  }
+  
+  .dark .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgb(31 41 55);
+  }
+  
+  .dark .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgb(75 85 99);
+  }
+  
+  .dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgb(107 114 128);
+  }
+}
+
+/* Clean Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth transitions */
+button, input, select, textarea, [role="button"] {
+  @apply transition-all duration-200;
+}
+
+/* Clean focus styles */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900;
+}
+
+/* Clean scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Clean typography */
+.medical-heading {
+  @apply text-gray-900 dark:text-gray-100 font-semibold tracking-tight;
+  letter-spacing: -0.025em;
+}
+
+.medical-subheading {
+  @apply text-gray-600 dark:text-gray-400 font-medium;
+}
+
+.medical-text {
+  @apply text-gray-700 dark:text-gray-300 leading-relaxed;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+}
