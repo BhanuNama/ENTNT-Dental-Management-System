@@ -617,7 +617,7 @@ VITE_APP_ENVIRONMENT=production
 
 
 ### **Developer Contact**
-- **Email**: [bhanunama08@gmail.comm](mailto:bhanunama08@gmail.com)
+- **Email**: [bhanunama08@gmail.com](mailto:bhanunama08@gmail.com)
 - **LinkedIn**: [https://www.linkedin.com/in/bhanu-nama-654957281/](https://www.linkedin.com/in/bhanu-nama-654957281/)
 - **Portfolio**: [https://bhanunama.netlify.app/](https://bhanunama.netlify.app/)
 
